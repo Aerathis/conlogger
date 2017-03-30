@@ -1,0 +1,9 @@
+{
+  "name": "conlogger",
+  "main": "conlogger.js",
+  "private": "true",
+  "dependencies": {
+    "express": "*",
+    "body-parser": "*"
+  }
+}
