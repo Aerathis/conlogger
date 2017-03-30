@@ -25,8 +25,8 @@ app.post('/containerlogs', function(req, res) {
       console.log(error);
       res.status(500).send(error);
     } else {
-      // Using stderr because exec returns the streams reversed for some reason
-      var cmdResponse = stderr;
+      // Streams seem to be confusingly non-standard on various machines ...
+      var cmdResponse = stdout === "" ? stderr : stdout;
       var lines = stderr.split('\n');
       var logResponse = {};
       logResponse[filterPred] = [];
