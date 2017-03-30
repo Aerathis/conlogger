@@ -27,7 +27,7 @@ app.post('/containerlogs', function(req, res) {
     } else {
       // Streams seem to be confusingly non-standard on various machines ...
       var cmdResponse = stdout === "" ? stderr : stdout;
-      var lines = stderr.split('\n');
+      var lines = cmdResponse.split('\n');
       var logResponse = {};
       logResponse[filterPred] = [];
       for (var i = 0; i < lines.length; i++) {
